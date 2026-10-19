@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Membership | Get Set For Life</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <header class="nav">
+    <a href="index.html" class="logo"><img src="logo.jpeg" alt="Get set for life coaching in practice"></a>
+    <button class="hamburger">☰</button>
+    <nav>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#how">How it works</a>
+      <a class="active" href="membership.html">Membership</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="join-button" href="index.html">Home <span>←</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="plans-hero">
+      <p class="eyebrow">Get Set Membership</p>
+      <h1>Support for the life<br>you are <em>building.</em></h1>
+      <p>Choose the membership that gives your goals a place to grow, with guidance that feels intentional, personal, and sustainable.</p>
+    </section>
+
+    <section class="plans">
+      <article class="plan-card">
+        <p class="eyebrow">Start</p>
+        <h2>Free</h2>
+        <p class="plan-copy">A thoughtful beginning for finding your direction.</p>
+        <ul>
+          <li>Monthly inspiration note</li>
+          <li>Access to free resources</li>
+          <li>Community updates</li>
+        </ul>
+        <div class="plan-cta">
+          <button class="outline plan-action" data-plan="free">Start free</button>
+        </div>
+      </article>
+
+      <article class="plan-card featured">
+        <span class="popular">Most popular</span>
+        <p class="eyebrow">Grow</p>
+        <h2 class="price">R199 <small>/ month</small></h2>
+        <p class="plan-copy">A steady coaching rhythm for meaningful progress.</p>
+        <ul>
+          <li>Monthly live group coaching</li>
+          <li>Guided practical tools</li>
+          <li>Member community access</li>
+          <li>Session replays</li>
+        </ul>
+        <div class="plan-cta">
+          <button class="primary plan-action" data-plan="grow">Choose Grow <span>→</span></button>
+        </div>
+      </article>
+
+      <article class="plan-card">
+        <p class="eyebrow">Thrive</p>
+        <h2 class="price">R499 <small>/ month</small></h2>
+        <p class="plan-copy">For focused support and deeper personal change.</p>
+        <ul>
+          <li>Everything in Grow</li>
+          <li>One personal coaching session</li>
+          <li>Priority support</li>
+          <li>Personal growth plan</li>
+        </ul>
+        <div class="plan-cta">
+          <button class="outline plan-action" data-plan="thrive">Choose Thrive</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="checkout-note">
+      <div class="checkout-note-inner">
+        <h2>A secure checkout is one step away.</h2>
+        <p>Plan selection is ready. Connect Stripe, PayFast, Paystack, or your preferred payment provider to turn this into live, secure subscription billing.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <img src="logo.jpeg" alt="Get set for life">
+      <p>Coaching in practice for the life you want to live.</p>
+      <small>© 2026 Get Set For Life Coaching in Practice</small>
+    </div>
+  </footer>
+
+  <div class="modal" id="checkout" aria-hidden="true">
+    <div class="modal-box">
+      <button class="close">×</button>
+      <p class="eyebrow">Subscription checkout</p>
+      <h2>Your plan is selected.</h2>
+      <p>Secure checkout is ready for your payment provider to connect and process membership payments.</p>
+      <p class="plan-label" data-plan-label>Selected plan</p>
+      <a class="primary" href="index.html#contact">Contact us to join <span>→</span></a>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Client profiles - only user can read/update their own
+    match /clients/{userId} {
+      allow create, read, update, delete: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Lead captures from homepage checklist - anyone can submit
+    match /lead-capture/{docId} {
+      allow create: if request.auth == null || request.auth != null;
+      allow read, update, delete: if false; // Admin only via console
+    }
+    
+    // Contact form submissions - anyone can submit
+    match /contact-submissions/{docId} {
+      allow create: if request.auth == null || request.auth != null;
+      allow read, update, delete: if false; // Admin only via console
+    }
+    
+    // Bookings - user can create and read their own
+    match /bookings/{bookingId} {
+      allow create: if request.auth != null && request.resource.data.clientId == request.auth.uid;
+      allow read: if request.auth != null && resource.data.clientId == request.auth.uid;
+      allow update, delete: if request.auth != null && resource.data.clientId == request.auth.uid;
+    }
+    
+    // Membership enquiries - user can create and read their own
+    match /enquiries/{enquiryId} {
+      allow create: if request.auth != null && request.resource.data.clientId == request.auth.uid;
+      allow read: if request.auth != null && resource.data.clientId == request.auth.uid;
+      allow update, delete: if request.auth != null && resource.data.clientId == request.auth.uid;
+    }
+    
+    // Public resources - everyone can read
+    match /resources/{docId} {
+      allow read: if true;
+      allow create, update, delete: if false; // Admin only
+    }
+  }
+}
